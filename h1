@@ -1,0 +1,21 @@
+import pygame
+import sys
+screen = pygame.display.set_mode((1520,780))
+pygame.display.set_caption("screen")
+
+image1 = pygame.image.load("light no.jpeg")
+image2 = pygame.image.load("light1.jpeg")
+resize1 = pygame.transform.scale(image1,(1520,780))
+resize2 = pygame.transform.scale(image2,(1520,780))
+screen.blit(resize1,(0,0))
+
+while True:
+     for event in pygame.event.get():
+          if event.type == pygame.MOUSEBUTTONDOWN:
+               screen.blit(resize2,(0,0))
+          if event.type == pygame.MOUSEBUTTONUP:
+               screen.blit(resize1,(0,0))
+          if event.type == pygame.QUIT:
+               pygame.quit()
+               sys.exit()
+     pygame.display.update()
